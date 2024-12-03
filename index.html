@@ -81,30 +81,37 @@
         @media (max-width: 860px) {
             .animated-container {
                 margin-right: 52%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 715px) {
             .animated-container {
                 margin-right: 54%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 600px) {
             .animated-container {
                 margin-right: 56%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 540px) {
             .animated-container {
                 margin-right: 57%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 500px) {
             .animated-container {
                 margin-right: 58%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 450px) {
             .animated-container {
                 margin-right: 61%; /* Adjust margin for smaller screens */
+            }
         }
         @media (max-width: 400px) {
             .animated-container {
                 margin-right: 64%; /* Adjust margin for smaller screens */
+            }
         }
 
     </style>
@@ -131,33 +138,22 @@
             "nicolas", "aitana", "lautaro", "alma", "benjamin", "isabela",
             "pato", "guille", "lucho", "coco", "tato", "pitu", "chino", 
             "tito", "nico", "rafa", "santi", "fede", "juani", "panchito", 
-            "cami", "vale", "mati", "tomi", "lau", "gabi", "carbonero", "bolso"
+            "cami", "vale", "mati", "tomi", "lau", "gabi"
         ];
 
-        const numberCombinations = [
-            "01", "03", "05", "07", "10", "00", "99", "66", "30", "54", "69",
-            "420", "720", "920", "999", "777", "666", "333", "000"
-        ];
 
         let nameIndex = 0;
-        let numberIndex = 0;
         const slotMachine = document.getElementById('slotMachine');
-        const numberCombination = document.getElementById('numberCombination');
 
         function animateSlotMachine() {
             // Update name
             slotMachine.textContent = names[nameIndex];
             nameIndex = (nameIndex + 1) % names.length; // Loop through names
-
-            // Update number combination
-            numberCombination.textContent = numberCombinations[numberIndex];
-            numberCombination.style.display = (numberIndex % 2 === 0) ? 'block' : 'none'; // Toggle visibility
-            numberIndex = (numberIndex + 1) % numberCombinations.length; // Loop through number combinations
         }
 
         setInterval(animateSlotMachine, 200); // Change name and number every 200ms
     </script>
     
-    <footer>@bsky.uy - 2024</footer> <!-- Footer with your sign -->
+    <footer>@bsky.uy - 2024</footer>
 </body>
 </html> 
