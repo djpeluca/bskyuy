@@ -1,4 +1,4 @@
-##Bsky.uy
+# bsky.uy
 
 ## De Bluesky Social
 _Las redes sociales son demasiado importantes para que las controlen unas cuantas corporaciones. Estamos construyendo una base abierta para la Internet social, de modo que todos podamos darle forma a su futuro._
