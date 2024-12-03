@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Background Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('img/248.webp'); 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .logo {
+            width: 900px; 
+            height: auto;
+            position: relative; /* Position for parallax effect */
+            z-index: 1; /* Ensure logo is above other elements */
+            transform: translateZ(0); /* Trigger hardware acceleration */
+        }
+        .bsky-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 30px; /* Added margin below the text */
+            z-index: 1; /* Ensure text is above other elements */
+            display: flex;
+            align-items: center; /* Center align items */
+            justify-content: center; /* Center items */
+            position: relative; /* Position relative for absolute children */
+            width: 100%; /* Full width to allow proper alignment */
+            max-width: 900px; /* Limit width to match logo */
+        }
+        .static-text {
+            position: absolute; /* Fix position */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for width */
+            z-index: 1; /* Ensure it is above other elements */
+            left: 60%;
+        }
+        .animated-container {
+            display: flex; /* Flexbox for animated elements */
+            align-items: center; /* Center align items */
+            justify-content: flex-end; /* Align items to the right */
+            margin-right: 50%;
+            margin-left: auto;
+        }
+        .slot-machine {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            overflow: hidden; /* Hide overflow for animation */
+            white-space: nowrap; /* Prevent line breaks */
+        }
+        .number-combination {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            margin-left: 10px; /* Space between name and number combination */
+            overflow: hidden; /* Hide overflow for animation */
+            white-space: nowrap; /* Prevent line breaks */
+            display: none; /* Initially hidden */
+        }
+        footer {
+            position: absolute; /* Position it at the bottom */
+            bottom: 20px; /* Space from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white; /* Change color as needed */
+            font-family: 'Roboto', sans-serif; /* Use the same font */
+            font-size: 16px; /* Adjust size as needed */
+        }
+            /* Media query for screens less than 860px */
+        @media (max-width: 860px) {
+            .animated-container {
+                margin-right: 52%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 715px) {
+            .animated-container {
+                margin-right: 54%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 600px) {
+            .animated-container {
+                margin-right: 56%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 540px) {
+            .animated-container {
+                margin-right: 57%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 500px) {
+            .animated-container {
+                margin-right: 58%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 450px) {
+            .animated-container {
+                margin-right: 61%; /* Adjust margin for smaller screens */
+        }
+        @media (max-width: 400px) {
+            .animated-container {
+                margin-right: 64%; /* Adjust margin for smaller screens */
+        }
+
+    </style>
+</head>
+<body>
+    <img src="img/Bluesky_Logo.svg" alt="Logo" class="logo"> 
+    <div class="bsky-text">
+        <div class="animated-container">
+            <div class="slot-machine" id="slotMachine">juan</div> <!-- Slot machine effect for names -->
+            <div class="number-combination" id="numberCombination">12</div> <!-- Slot machine effect for numbers -->
+        </div>
+        <span class="static-text">.bsky.uy</span> <!-- Static part -->
+    </div>
+
+    <script>
+        const names = [
+            "juan", "maria", "jose", "ana", "pablo", "laura", "luis", "carolina", 
+            "diego", "valentina", "nicolas", "camila", "martin", "sofia", 
+            "gabriel", "julieta", "santiago", "agustina", "mateo", "lucia", 
+            "joaquin", "emilia", "felipe", "renata", "andres", "victoria", 
+            "facundo", "mia", "tomas", "delfina", "lucas", "salome", 
+            "martin", "zoe", "ignacio", "clara", "sebastian", "jimena", 
+            "mateo", "paula", "simon", "miranda", "emiliano", "antonia", 
+            "nicolas", "aitana", "lautaro", "alma", "benjamin", "isabela",
+            "pato", "guille", "lucho", "coco", "tato", "pitu", "chino", 
+            "tito", "nico", "rafa", "santi", "fede", "juani", "panchito", 
+            "cami", "vale", "mati", "tomi", "lau", "gabi", "carbonero", "bolso"
+        ];
+
+        const numberCombinations = [
+            "01", "03", "05", "07", "10", "00", "99", "66", "30", "54", "69",
+            "420", "720", "920", "999", "777", "666", "333", "000"
+        ];
+
+        let nameIndex = 0;
+        let numberIndex = 0;
+        const slotMachine = document.getElementById('slotMachine');
+        const numberCombination = document.getElementById('numberCombination');
+
+        function animateSlotMachine() {
+            // Update name
+            slotMachine.textContent = names[nameIndex];
+            nameIndex = (nameIndex + 1) % names.length; // Loop through names
+
+            // Update number combination
+            numberCombination.textContent = numberCombinations[numberIndex];
+            numberCombination.style.display = (numberIndex % 2 === 0) ? 'block' : 'none'; // Toggle visibility
+            numberIndex = (numberIndex + 1) % numberCombinations.length; // Loop through number combinations
+        }
+
+        setInterval(animateSlotMachine, 200); // Change name and number every 200ms
+    </script>
+    
+    <footer>@bsky.uy - 2024</footer> <!-- Footer with your sign -->
+</body>
+</html> 
