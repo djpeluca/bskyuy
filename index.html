@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Background Page</title>
+    <title>Uruguay en Bluesky</title>
+    <meta name="description" content="Uruguay en Bluesky. Comunidad Uruguaya en Bsky, Red Social Libre.">
+    <meta name="keywords" content="uruguay, uruguaya, comunidad, bluesky, bsky, bskyuy, mastodon, social media, red social, libre">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bluesky Uruguay - Comunidad Uruguaya en Bsky | Red Social Libre">
+    <meta property="og:description" content="Uruguay en Bluesky. Comunidad Uruguaya en Bsky, Red Social Libre.">
+    <meta property="og:image" content="img/Bluesky_Logo.svg">
+    <meta property="og:url" content="https://bsky.uy">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bluesky Uruguay - Social Media Platform | Red Social Libre">
+    <meta name="twitter:description" content="Join Bluesky, the social media platform in Uruguay. Connect freely with others on our red social libre.">
+    <meta name="twitter:image" content="img/Bluesky_Logo.svg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,6 +32,7 @@
             align-items: center;
             flex-direction: column;
             overflow: hidden; /* Prevent scrolling */
+            position: relative; /* Ensure body is positioned for absolute children */
         }
         .logo {
             width: 900px; 
@@ -117,13 +134,13 @@
     </style>
 </head>
 <body>
-    <img src="img/Bluesky_Logo.svg" alt="Logo" class="logo"> 
+    <img src="img/Bluesky_Logo.svg" alt="Uruguay en Bluesky - Logo de Bluesky" class="logo">
     <div class="bsky-text">
         <div class="animated-container">
-            <div class="slot-machine" id="slotMachine">juan</div> <!-- Slot machine effect for names -->
-            <div class="number-combination" id="numberCombination">12</div> <!-- Slot machine effect for numbers -->
+            <div class="slot-machine" id="slotMachine">juan</div>
+            <div class="number-combination" id="numberCombination">12</div>
         </div>
-        <span class="static-text">.bsky.uy</span> <!-- Static part -->
+        <span class="static-text">.bsky.uy</span>
     </div>
 
     <script>
