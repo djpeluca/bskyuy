@@ -38,11 +38,13 @@
             position: relative; /* Ensure body is positioned for absolute children */
         }
         .logo {
-            width: 900px; 
-            height: auto;
+            max-width: 100%; /* Ensure the logo does not exceed the width of its container */
+            height: auto; /* Maintain aspect ratio */
+            width: auto; /* Allow width to adjust automatically */
             position: relative; /* Position for parallax effect */
             z-index: 1; /* Ensure logo is above other elements */
             transform: translateZ(0); /* Trigger hardware acceleration */
+            margin: 0 auto; /* Center the logo horizontally */
         }
         .bsky-text {
             font-family: 'Roboto', sans-serif;
@@ -102,6 +104,9 @@
             .animated-container {
                 margin-right: 52%; /* Adjust margin for smaller screens */
             }
+            .logo {
+                max-width: 80%; /* Adjust max width for smaller screens */
+            }
         }
         @media (max-width: 715px) {
             .animated-container {
@@ -111,6 +116,9 @@
         @media (max-width: 600px) {
             .animated-container {
                 margin-right: 56%; /* Adjust margin for smaller screens */
+            }
+            .logo {
+                max-width: 70%; /* Further adjust max width for very small screens */
             }
         }
         @media (max-width: 540px) {
@@ -132,6 +140,9 @@
             .animated-container {
                 margin-right: 64%; /* Adjust margin for smaller screens */
             }
+            .logo {
+                max-width: 60%; /* Further adjust max width for very small screens */
+            }
         }
 
     </style>
@@ -148,16 +159,16 @@
 
     <script>
         const names = [
-            "juan", "maria", "jose", "ana", "pablo", "laura", "luis", "carolina", 
-            "diego", "valentina", "nicolas", "camila", "martin", "sofia", 
-            "gabriel", "julieta", "santiago", "agustina", "mateo", "lucia", 
-            "joaquin", "emilia", "felipe", "renata", "andres", "victoria", 
+            "juan", "maria", "jose", "ana", "pablo", "laura", "luis", "caro", 
+            "diego", "nicolas", "camila", "martin", "sofia", 
+            "gabi", "agus", "mateo", "lucia", 
+            "joaco", "emilia", "felipe", "renata", "andres", "vicky", 
             "facundo", "mia", "tomas", "delfina", "lucas", "salome", 
-            "martin", "zoe", "ignacio", "clara", "sebastian", "jimena", 
-            "mateo", "paula", "simon", "miranda", "emiliano", "antonia", 
-            "nicolas", "aitana", "lautaro", "alma", "benjamin", "isabela",
+            "martin", "zoe", "ignacio", "clara", "sebas", "jimena", 
+            "mateo", "paula", "simon", "miranda", "emi", "anto", 
+            "nicolas", "aitana", "lauta", "alma", "benja", "isa",
             "pato", "guille", "lucho", "coco", "tato", "pitu", "chino", 
-            "tito", "nico", "rafa", "santi", "fede", "juani", "panchito", 
+            "tito", "nico", "rafa", "santi", "fede", "juani", "pancho", 
             "cami", "vale", "mati", "tomi", "lau", "gabi"
         ];
 
