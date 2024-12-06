@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argentina en Bluesky</title>
+    <meta name="description" content="Argentina en Bluesky. Comunidad Argentinaa en Bsky, Red Social Libre.">
+    <meta name="keywords" content="Argentina, Argentinaa, comunidad, bluesky, bsky, bskyuy, mastodon, social media, red social, libre">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bluesky Argentina - Comunidad Argentinaa en Bsky | Red Social Libre">
+    <meta property="og:description" content="Argentina en Bluesky. Comunidad Argentinaa en Bsky, Red Social Libre.">
+    <meta property="og:image" content="img/Bluesky_Logo.svg">
+    <meta property="og:url" content="https://bsky.ar">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bluesky Argentina - Social Media Platform | Red Social Libre">
+    <meta name="twitter:description" content="Argentina en Bluesky. Comunidad Argentina en Bsky, Red Social Libre.">
+    <meta name="twitter:image" content="img/Bluesky_Logo.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/Bluesky_Logo.svg" type="image/svg+xml">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('img/argentina.webp'); 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* Ensure body is positioned for absolute children */
+        }
+        .logo {
+            max-width: 100%; /* Ensure the logo does not exceed the width of its container */
+            height: auto; /* Maintain aspect ratio */
+            width: auto; /* Allow width to adjust automatically */
+            position: relative; /* Position for parallax effect */
+            z-index: 1; /* Ensure logo is above other elements */
+            transform: translateZ(0); /* Trigger hardware acceleration */
+            margin: 0 auto; /* Center the logo horizontally */
+        }
+        .bsky-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 30px; /* Added margin below the text */
+            z-index: 1; /* Ensure text is above other elements */
+            display: flex;
+            align-items: center; /* Center align items */
+            justify-content: center; /* Center items */
+            position: relative; /* Position relative for absolute children */
+            width: 100%; /* Full width to allow proper alignment */
+            max-width: 900px; /* Limit width to match logo */
+        }
+        .static-text {
+            position: absolute; /* Fix position */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for width */
+            z-index: 1; /* Ensure it is above other elements */
+            left: 60%;
+        }
+        .animated-container {
+            display: flex; /* Flexbox for animated elements */
+            align-items: center; /* Center align items */
+            justify-content: flex-end; /* Align items to the right */
+            margin-right: 50%;
+            margin-left: auto;
+        }
+        .slot-machine {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            overflow: hidden; /* Hide overflow for animation */
+            white-space: nowrap; /* Prevent line breaks */
+        }
+        .number-combination {
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            color: white;
+            margin-left: 10px; /* Space between name and number combination */
+            overflow: hidden; /* Hide overflow for animation */
+            white-space: nowrap; /* Prevent line breaks */
+            display: none; /* Initially hidden */
+        }
+        footer {
+            position: absolute; /* Position it at the bottom */
+            bottom: 20px; /* Space from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white; /* Change color as needed */
+            font-family: 'Roboto', sans-serif; /* Use the same font */
+            font-size: 16px; /* Adjust size as needed */
+        }
+            /* Media query for screens less than 860px */
+        @media (max-width: 860px) {
+            .animated-container {
+                margin-right: 52%; /* Adjust margin for smaller screens */
+            }
+            .logo {
+                max-width: 80%; /* Adjust max width for smaller screens */
+            }
+        }
+        @media (max-width: 715px) {
+            .animated-container {
+                margin-right: 54%; /* Adjust margin for smaller screens */
+            }
+        }
+        @media (max-width: 600px) {
+            .animated-container {
+                margin-right: 56%; /* Adjust margin for smaller screens */
+            }
+            .logo {
+                max-width: 70%; /* Further adjust max width for very small screens */
+            }
+        }
+        @media (max-width: 540px) {
+            .animated-container {
+                margin-right: 57%; /* Adjust margin for smaller screens */
+            }
+        }
+        @media (max-width: 500px) {
+            .animated-container {
+                margin-right: 58%; /* Adjust margin for smaller screens */
+            }
+        }
+        @media (max-width: 450px) {
+            .animated-container {
+                margin-right: 61%; /* Adjust margin for smaller screens */
+            }
+        }
+        @media (max-width: 400px) {
+            .animated-container {
+                margin-right: 64%; /* Adjust margin for smaller screens */
+            }
+            .logo {
+                max-width: 60%; /* Further adjust max width for very small screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <img src="img/Bluesky_Logo.svg" alt="Argentina en Bluesky - Logo de Bluesky" class="logo">
+    <div class="bsky-text">
+        <div class="animated-container">
+            <div class="slot-machine" id="slotMachine">juan</div>
+            <div class="number-combination" id="numberCombination">12</div>
+        </div>
+        <span class="static-text">.bsky.ar</span>
+        <!-- Foto de Andre Moura: https://www.pexels.com/es-es/foto/bandera-argentina-contra-el-cielo-17407846/ -->
+    </div>
+
+    <script>
+        const names = [
+            "juan", "maria", "jose", "ana", "pablo", "laura", "luis", "caro", 
+            "diego", "nico", "camila", "martin", "sofia", 
+            "gabi", "agus", "mateo", "lucia", 
+            "joaco", "emilia", "felipe", "andres", "vicky", 
+            "facu", "mia", "tomas", "delfi", "lucas", "salome", 
+            "martin", "zoe", "nacho", "clara", "sebas", "jime", 
+            "mateo", "paula", "simon", "emi", "anto", 
+            "nico", "aitana", "lauta", "alma", "benja", "isa",
+            "pato", "guille", "lucho", "coco", "tato", "pitu", "chino", 
+            "tito", "nico", "rafa", "santi", "fede", "juani", "pancho", 
+            "cami", "vale", "mati", "tomi", "lau", "gabi", "salva"
+        ];
+
+
+        let nameIndex = 0;
+        const slotMachine = document.getElementById('slotMachine');
+
+        function animateSlotMachine() {
+            // Update name
+            slotMachine.textContent = names[nameIndex];
+            nameIndex = (nameIndex + 1) % names.length; // Loop through names
+        }
+
+        setInterval(animateSlotMachine, 200); // Change name and number every 200ms
+    </script>
+    
+    <footer>@bsky.ar - 2024</footer>
+</body>
+</html> 
